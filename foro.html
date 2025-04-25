@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProFutbol - Foro</title>
+    <link rel="stylesheet" href="styleForo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-left">
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="navbar-logo"></a>
+            </div>
+
+            <div class="navbar-burger" onclick="toggleMobileMenu()">
+                &#9776;
+            </div>
+
+            <div class="navbar-center desktop-menu">
+                <a href="noticias.html">Noticias</a>
+                <a href="index.html">Partidos</a>
+                <a class="active" href="foro.html">Foro</a>
+                <a href="tienda.html">Tienda</a>
+            </div>
+
+            <div onclick="irLogin()" class="navbar-right">
+                <img src="img/user.png" alt="Usuario" class="navbar-avatar">
+                <span id="registrarseTxt" class="navbar-name">Registrarse</span>
+            </div>
+        </div>
+
+        <!-- Menú mobile -->
+        <div id="mobile-menu" class="mobile-menu show">
+            <a href="noticias.html">Noticias</a>
+            <a href="index.html">Partidos</a>
+            <a class="active" href="foro.html">Foro</a>
+            <a href="tienda.html">Tienda</a>
+        </div>
+
+        <div class="menu-section">
+            <div class="left-sidebar">
+                <div class="menu-item destacado">Foro</div>
+                <div class="menu-item">Editar perfil</div>
+                <div class="menu-item">Cambiar equipo</div>
+                <a href="https://instagram.com/nicopulvii" target="_blank">
+                    <img id="publicidad" src="img/publicidad2.png" alt="Publicidad Instagram">
+                </a>
+            </div>
+
+            <div class="main-content">
+                <div class="chat-container2">
+                    <main id="chatContainer" class="chat-container">
+                        <div class="message">
+                            <div class="avatar">
+                                <img src="img/user-icon.png" alt="">
+                            </div>
+                            <div class="message-content">
+                                <strong>Bautista</strong>
+                                <p>Gente, me corté el pelo.</p>
+                            </div>
+                            <span class="time">14:26</span>
+                        </div>
+
+                        <div class="message">
+                            <div class="avatar">
+                                <img src="img/user-icon.png" alt="">
+                            </div>
+                            <div class="message-content">
+                                <strong>Joaquín</strong>
+                                <p>Te mataron amigo.</p>
+                            </div>
+                            <span class="time">14:28</span>
+                        </div>
+
+                        <div class="message">
+                            <div class="avatar">
+                                <img src="img/user-icon.png" alt="">
+                            </div>
+                            <div class="message-content">
+                                <strong>Nicolás</strong>
+                                <p>El partido de River estuvo muy trujo.</p>
+                            </div>
+                            <span class="time">14:30</span>
+                        </div>
+
+                        <div class="message">
+                            <div class="avatar">
+                                <img src="img/user-icon.png" alt="">
+                            </div>
+                            <div class="message-content">
+                                <strong>Agustín</strong>
+                                <p>¿Qué es trujo?</p>
+                            </div>
+                            <span class="time">14:33</span>
+                        </div>
+
+                        <div class="message-input">
+                            <input id="msgForo" type="text" placeholder="Ingrese el mensaje...">
+                            <button onclick="enviarMSG()">➜</button>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

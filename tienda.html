@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styleTienda.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProFútbol - Tienda</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-left">
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="navbar-logo"></a>
+            </div>
+
+            <div class="navbar-burger" onclick="toggleMobileMenu()">
+                &#9776;
+            </div>
+
+            <div class="navbar-center desktop-menu">
+                <a href="noticias.html">Noticias</a>
+                <a href="index.html">Partidos</a>
+                <a href="foro.html">Foro</a>
+                <a class="active" href="tienda.html">Tienda</a>
+            </div>
+
+            <div onclick="irLogin()" class="navbar-right">
+                <img src="img/user.png" alt="Usuario" class="navbar-avatar">
+                <span id="registrarseTxt" class="navbar-name">Registrarse</span>
+            </div>
+        </div>
+
+        <!-- Menú mobile -->
+        <div id="mobile-menu" class="mobile-menu show">
+            <a href="noticias.html">Noticias</a>
+            <a href="index.html">Partidos</a>
+            <a href="foro.html">Foro</a>
+            <a class="active" href="tienda.html">Tienda</a>
+            
+        </div>
+
+        <div class="god">
+            <div class="menu-section">
+                <div class="left-sidebar">
+                    <div class="menu-item-destacado">Productos</div>
+                    <div onclick="mostrarProductos()" class="menu-item">Todo</div>
+                    <div onclick="mostrarRemera()" class="menu-item">Remeras</div>
+                    <div onclick="mostrarBuzoCampera()" class="menu-item">Buzos/Camperas</div>
+                    <div onclick="mostrarPantalon()" class="menu-item">Pantalones</div>
+                    <a href="https://instagram.com/nicopulvii" target="_blank">
+                        <img id="publicidad" src="img/publicidad2.png" alt="Publicidad de Instagram">
+                    </a>
+                </div>
+            </div>
+
+            <div id="der">
+                <div id="buzocampera" class="product buzo">
+                    <img src="img/buzo.jpg" alt="buzo">
+                    <h3 class="nombreprod">Buzo adidas Negro</h3>
+                    <p>Talles:</p>
+                    <select class="select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <p class="precio">$100.000,00</p>
+                    <p class="cuota">6 cuotas sin interés de $16.666,66</p>
+                    <p id="estrellas">4.0 ★ ★ ★ ★ ☆ (1456)</p>
+                    <button>Añadir al carrito</button>
+                </div>
+
+                <div id="remera1" class="product remera">
+                    <img src="img/liverpool.webp" alt="liverpool">
+                    <h3 class="nombreprod">Camiseta Liverpool</h3>
+                    <p>Talles:</p>
+                    <select class="select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <p class="precio">$120.000,00</p>
+                    <p class="cuota">6 cuotas sin interés de $20.000,00</p>
+                    <p id="estrellas">5.0 ★ ★ ★ ★ ★ (1230)</p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div id="remera2" class="product remera">
+                    <img src="img/chelsea.jpg" alt="chelsea">
+                    <h3 class="nombreprod">Camiseta Chelsea</h3>
+                    <p>Talles:</p>
+                    <select class="select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <p class="precio">$120.000,00</p>
+                    <p class="cuota">6 cuotas sin interés de $20.000,00</p>
+                    <p id="estrellas">5.0 ★ ★ ★ ★ ★ (1230)</p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div id="pantalon1" class="product pantalon">
+                    <img src="img/pantalon.webp" alt="Pantalon">
+                    <h3 class="nombreprod">Pantalon adidas </h3>
+                    <p>Talles:</p>
+                    <select class="select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <p class="precio">$50.000,00</p>
+                    <p class="cuota">6 cuotas sin interés de $8.333,33</p>
+                    <p id="estrellas">5.0 ★ ★ ★ ★ ★ (1293)</p>
+                    <button>Añadir al carrito</button>
+                </div>
+                <div id="pantalon2" class="product pantalon">
+                    <img src="img/short.webp" alt="Short">
+                    <h3 class="nombreprod">Short adidas negro</h3>
+                    <p>Talles:</p>
+                    <select class="select">
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                    <p class="precio">$30.000,00</p>
+                    <p class="cuota">6 cuotas sin interés de $5.000,00</p>
+                    <p id="estrellas">4.0 ★ ★ ★ ★ ☆  (1743)</p>
+                    <button>Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

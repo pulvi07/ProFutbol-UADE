@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProFútbol - Resultados de partidos</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-left">
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="navbar-logo"></a>
+            </div>
+
+            <div class="navbar-burger" onclick="toggleMobileMenu()">
+                &#9776;
+            </div>
+
+            <div class="navbar-center desktop-menu">
+                <a href="noticias.html">Noticias</a>
+                <a class="active" href="index.html">Partidos</a>
+                <a href="foro.html">Foro</a>
+                <a href="tienda.html">Tienda</a>
+            </div>
+
+            <div onclick="irLogin()" class="navbar-right">
+                <img src="img/user.png" alt="Usuario" class="navbar-avatar">
+                <span id="registrarseTxt" class="navbar-name">Registrarse</span>
+            </div>
+        </div>
+
+        <!-- Menú mobile -->
+        <div id="mobile-menu" class="mobile-menu show">
+            <a href="noticias.html">Noticias</a>
+            <a class="active" href="index.html">Partidos</a>
+            <a href="foro.html">Foro</a>
+            <a href="tienda.html">Tienda</a>
+        </div>
+
+        <div class="menu-section">
+            <div class="left-sidebar">
+                <div class="menu-item destacado">Destacado</div>
+                <div onclick="mostrarTodo()" class="menu-item">Todo</div>
+                <div onclick="mostrarLiga()" class="menu-item">Liga Profesional</div>
+                <div onclick="mostrarLibertadores()" class="menu-item">Libertadores</div>
+                <div onclick="mostrarSudamericana()" class="menu-item">Sudamericana</div>
+                <div onclick="mostrarBNacional()" class="menu-item">Primera B Nacional</div>
+                <a href="https://instagram.com/nicopulvii" target="_blank">
+                    <img id="publicidad" src="img/publicidad2.png" alt="Publicidad de Instagram">
+                </a>
+            </div>
+
+            <div class="main-content">
+                <!-- Liga Profesional -->
+                <div id="liga" class="match-section">
+                    <div class="section-header">
+                        <img src="img/liga_profesional.png" alt="Liga Profesional Logo">
+                        Liga Profesional
+                        <img src="img/liga_profesional.png" alt="Liga Profesional Logo">
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">18:00</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/Boca.png" alt=""> Boca Juniors
+                        </div>
+                        <div class="match-team">
+                            River Plate <img src="img/equipos/river.png" alt="">
+                        </div>
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">19:30</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/lanus.png" alt=""> Lanús
+                        </div>
+                        <div class="match-team">
+                            Vélez Sarsfield <img src="img/equipos/velez.png" alt="">
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="section-info">Sección<br> Liga Profesional</div>
+                        <div class="section-controls">
+                            <div class="control-button">🔊</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Libertadores -->
+                <div id="libertadores" class="match-section">
+                    <div class="section-header">
+                        <img src="img/libertadores.png" alt="Libertadores">
+                        Libertadores
+                        <img src="img/libertadores.png" alt="Libertadores">
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">21:00</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/Escudo_Botafogo.png" alt=""> Botafogo
+                        </div>
+                        <div class="match-team">
+                            Rosario Central <img src="img/equipos/rosarioCentral.png" alt="">
+                        </div>
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">22:30</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/estudiantes.png" alt=""> Estudiantes (LP)
+                        </div>
+                        <div class="match-team">
+                            Central Córdoba <img src="img/equipos/centralCordoba.png" alt="">
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="section-info">Sección<br> Libertadores</div>
+                        <div class="section-controls">
+                            <div class="control-button">🔊</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sudamericana -->
+                <div id="Sudamericana" class="match-section">
+                    <div class="section-header">
+                        <img src="img/sudamericana.png" alt="Sudamericana">
+                        Sudamericana
+                        <img src="img/sudamericana.png" alt="Sudamericana">
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">21:30</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/independiente.png" alt=""> Independiente
+                        </div>
+                        <div class="match-team">
+                            Defensa y Justicia <img src="img/equipos/defensa.png" alt="">
+                        </div>
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">23:00</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/fluminense.png" alt=""> Fluminense
+                        </div>
+                        <div class="match-team">
+                            América de Cali <img src="img/equipos/america_de_cali.png" alt="">
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="section-info">Sección<br>Sudamericana</div>
+                        <div class="section-controls">
+                            <div class="control-button">🔊</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primera B Nacional -->
+                <div id="bNacional" class="match-section">
+                    <div class="section-header">
+                        <img src="img/b_nacional.png" alt="B Nacional">
+                        Primera B Nacional
+                        <img src="img/b_nacional.png" alt="B Nacional">
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">12:00</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/chacarita.png" alt=""> Chacarita
+                        </div>
+                        <div class="match-team">
+                            San Telmo <img src="img/equipos/Club_santelmo_logo.png" alt="">
+                        </div>
+                    </div>
+                    <div class="match-row">
+                        <div class="match-time">14:30</div>
+                        <div class="match-team home">
+                            <img src="img/equipos/Defensores_unidos_logo.png" alt=""> Defensores Unidos
+                        </div>
+                        <div class="match-team">
+                            Temperley <img src="img/equipos/temperley.png" alt="">
+                        </div>
+                    </div>
+                    <div class="section-footer">
+                        <div class="section-info">Sección<br>Primera B Nacional</div>
+                        <div class="section-controls">
+                            <div class="control-button">🔊</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

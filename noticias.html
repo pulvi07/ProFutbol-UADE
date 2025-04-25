@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ProFútbol - Noticias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleNoticias.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar-left">
+                <a href="index.html"><img src="img/logo.png" alt="Logo" class="navbar-logo"></a>
+            </div>
+
+            <div class="navbar-burger" onclick="toggleMobileMenu()">
+                &#9776;
+            </div>
+
+            <div class="navbar-center desktop-menu">
+                <a class="active" href="noticias.html">Noticias</a>
+                <a href="index.html">Partidos</a>
+                <a href="foro.html">Foro</a>
+                <a href="tienda.html">Tienda</a>
+            </div>
+
+            <div onclick="irLogin()" class="navbar-right">
+                <img src="img/user.png" alt="Usuario" class="navbar-avatar">
+                <span id="registrarseTxt" class="navbar-name">Registrarse</span>
+            </div>
+        </div>
+
+        <!-- Menú mobile -->
+        <div id="mobile-menu" class="mobile-menu show">
+            <a class="active" href="noticias.html">Noticias</a>
+            <a href="index.html">Partidos</a>
+            <a href="foro.html">Foro</a>
+            <a href="tienda.html">Tienda</a>
+        </div>
+
+        <div class="menu-section">
+            <div class="left-sidebar">
+                <div class="menu-item destacado">Categorías</div>
+                <div class="menu-item">Últimas noticias</div>
+                <div class="menu-item">Liga Profesional</div>
+                <div class="menu-item">Libertadores</div>
+                <div class="menu-item">Internacionales</div>
+                <a href="https://instagram.com/nicopulvii" target="_blank">
+                    <img id="publicidad" src="img/publicidad2.png" alt="Publicidad Instagram">
+                </a>
+            </div>
+
+            <div class="main-content">
+                <h2 class="section-title">Últimas noticias</h2>
+
+                <div class="noticia">
+                    <img src="img/noticia1.jpg" alt="Noticia 1">
+                    <div class="noticia-texto">
+                        <h3>San Marino goleó a México</h3>
+                        <p>La selección sanmarinense goleó, bailó, arruinó, deleteó, pisó, etc, etc, etc, a la selección del Chavo del 8.</p>
+                    </div>
+                </div>
+
+                <div class="noticia">
+                    <img src="img/noticia2.jpg" alt="Noticia 2">
+                    <div class="noticia-texto">
+                        <h3>Luís Miguel José Antonio Claudio Sebastián "Pulga" Rodríguez ganó el Balón de Oro 2025</h3>
+                        <p>"Pulga" Rodríguez hizo historia al convertirse en el primer tucumano en recibir este prestigioso galardón, destacándose por su talento y dedicación en el fútbol.</p>
+                    </div>
+                </div>
+
+                <div class="noticia">
+                    <img src="img/noticia3.jpg" alt="Noticia 3">
+                    <div class="noticia-texto">
+                        <h3>RiBer se fue a la B</h3>
+                        <p>🔥🚨🧑‍🚒🧑‍🚒🧑‍🚒⚠️⚠️HAY FUEGO EN EL ESTADIO⚠️⚠️🔥🚨🧑‍🚒🧑‍🚒🧑‍🚒</p>
+                    </div>
+                </div>
+
+                <div class="noticia">
+                    <img src="img/noticia4.jpg" alt="Noticia 4">
+                    <div class="noticia-texto">
+                        <h3>Equipos de Arabia Saudita se unen a la Champions League</h3>
+                        <p>A partir de 2026, se permitirá que clubes saudíes compitan junto a la élite europea, marcando un nuevo capítulo en el fútbol internacional.</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

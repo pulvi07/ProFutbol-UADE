@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ProFútbol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleLogin.css">
+</head>
+<body>
+    <a href="index.html"><img src="img/logo.png" alt="Logo" class="logo"></a>
+
+    <div class="selector-formularios">
+        <button id="btn-login" class="activo">Iniciar sesión</button>
+        <button id="btn-registro">Registrarse</button>
+    </div>
+
+    <div class="contenedor">
+        <form id="form-login" class="formulario formulario-login" action="index.html">
+            <h2 class="titulo-form">Iniciar sesión</h2>
+
+            <label for="login-usuario">Usuario</label>
+            <input id="login-usuario" type="text" placeholder="Ingresá tu usuario" required>
+
+            <label for="login-contraseña">Contraseña</label>
+            <input id="login-contraseña" type="password" placeholder="Ingresá tu contraseña" required>
+
+            <div class="checkbox-linea">
+                <input type="checkbox" id="recordar-usuario">
+                <label for="recordar-usuario">Recordarme</label>
+            </div>
+
+            <button type="submit">Iniciar sesión</button>
+            <a href="#" class="textosecundario">Olvidé mi contraseña</a>
+        </form>
+
+        <form id="form-registro" class="formulario" action="index.html" style="display: none;">
+            <h2 class="titulo-form">Crear una cuenta</h2>
+
+            <label for="registro-email">Correo electrónico</label>
+            <input id="registro-email" type="email" placeholder="Ingresá tu correo electrónico" required>
+
+            <label for="registro-usuario">Usuario</label>
+            <input id="registro-usuario" type="text" placeholder="Elegí un nombre de usuario" required>
+
+            <label for="registro-contraseña">Contraseña</label>
+            <input id="registro-contraseña" type="password" placeholder="Creá una contraseña segura" required>
+
+            <label for="registro-sexo">Sexo</label>
+            <select id="registro-sexo" name="sexo" required>
+                <option value="" disabled selected>Seleccioná tu sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="no-binario">No binario</option>
+                <option value="prefiero-no-decirlo">Prefiero no decirlo</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="registro-equipo">Equipo</label>
+            <div class="equipos">
+                <img src="img/equipos/belgrano.png" alt="">
+                <img src="img/equipos/Boca.png" alt="">
+                <img src="img/equipos/river.png" alt="">
+                <img src="img/equipos/rosarioCentral.png" alt="">
+                <img src="img/equipos/estudiantes.png" alt="">
+                <img src="img/equipos/Escudo_Botafogo.png" alt="">
+                <img src="img/equipos/Club_santelmo_logo.png" alt="">
+                <img src="img/equipos/Defensores_unidos_logo.png" alt="">
+                <img src="img/equipos/centralCordoba.png" alt="">
+                <img src="img/equipos/temperley.png" alt="">
+                <img src="img/equipos/velez.png" alt="">
+                <img src="img/equipos/lanus.png" alt="">
+                <img src="img/equipos/america_de_cali.png" alt="">
+                <img src="img/equipos/independiente.png" alt="">
+                <img src="img/equipos/fluminense.png" alt="">
+                <img src="img/equipos/defensa.png" alt="">
+            </div>
+
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+
+    <script>
+        const btnLogin = document.getElementById('btn-login');
+        const btnRegistro = document.getElementById('btn-registro');
+        const formLogin = document.getElementById('form-login');
+        const formRegistro = document.getElementById('form-registro');
+
+        btnLogin.addEventListener('click', () => {
+            formLogin.style.display = 'grid';
+            formRegistro.style.display = 'none';
+            btnLogin.classList.add('activo');
+            btnRegistro.classList.remove('activo');
+        });
+
+        btnRegistro.addEventListener('click', () => {
+            formLogin.style.display = 'none';
+            formRegistro.style.display = 'grid';
+            btnRegistro.classList.add('activo');
+            btnLogin.classList.remove('activo');
+        });
+    </script>
+</body>
+</html>
