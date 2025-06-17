@@ -1,3 +1,7 @@
+let usuarioNombre = localStorage.getItem('usuarioNombre') || 'Bautista';
+let usuarioLogo   = localStorage.getItem('usuarioLogo')   || 'img/equipos/belgrano.png';
+
+
 function mostrarTodo() {
     document.getElementById("liga").style.display = "block";
     document.getElementById("bNacional").style.display = "block";
@@ -73,6 +77,48 @@ function irLogin() {
 }
 
 //chat foro
+
+// función para editar nombre
+function editarNombre() {
+    const nuevo = prompt('¿Con qué nombre quieres aparecer?', usuarioNombre);
+    if (nuevo && nuevo.trim()) {
+        usuarioNombre = nuevo.trim();
+        localStorage.setItem('usuarioNombre', usuarioNombre);
+    }
+}
+
+// función para editar equipo
+function editarEquipo() {
+    const equipos = [
+      { name: 'América de Cali',        src:'img/equipos/america_de_cali.png'        },
+      { name: 'Belgrano',               src:'img/equipos/belgrano.png'               },
+      { name: 'Boca Juniors',           src:'img/equipos/Boca.png'                   },
+      { name: 'Central Córdoba',        src:'img/equipos/centralCordoba.png'         },
+      { name: 'Chacarita',              src:'img/equipos/chacarita.png'              },
+      { name: 'San Telmo',              src:'img/equipos/Club_santelmo_logo.png'     },
+      { name: 'Def. Unidos',            src:'img/equipos/Defensores_unidos_logo.png' },
+      { name: 'Botafogo',               src:'img/equipos/Escudo_Botafogo.png'        },
+      { name: 'Estudiantes',            src:'img/equipos/estudiantes.png'            },
+      { name: 'Fluminense',             src:'img/equipos/fluminense.png'             },
+      { name: 'Independiente',          src:'img/equipos/independiente.png'          },
+      { name: 'Lanús',                  src:'img/equipos/lanus.png'                  },
+      { name: 'River Plate',            src:'img/equipos/river.png'                  },
+      { name: 'Rosario Central',        src:'img/equipos/rosarioCentral.png'         },
+      { name: 'Temperley',              src:'img/equipos/temperley.png'              },
+      { name: 'Vélez',                  src:'img/equipos/velez.png'                  },
+    ];
+    //  menú de texto
+    let menu = 'Elige tu equipo:\n';
+    equipos.forEach((e,i)=> menu += `${i+1}. ${e.name}\n`);
+    const resp = prompt(menu, '1');
+    const idx  = parseInt(resp,10) - 1;
+    if (!isNaN(idx) && idx >= 0 && idx < equipos.length) {
+        usuarioLogo = equipos[idx].src;
+        localStorage.setItem('usuarioLogo', usuarioLogo);
+    }
+}
+
+
 function cargarForo() {
     if (localStorage.getItem('msg1') !== null) {
         const chatContainer = document.getElementById('chatContainer');
@@ -98,7 +144,10 @@ function cargarForo() {
 
 window.onload = function() {
     cargarForo();
+    document.getElementById('editName').addEventListener('click', editarNombre);
+    document.getElementById('editTeam').addEventListener('click', editarEquipo);
 }
+
 
 
 
@@ -121,8 +170,16 @@ function enviarMSG() {
     const minutos = String(ahora.getMinutes()).padStart(2, '0');
     const segundos = String(ahora.getSeconds()).padStart(2, '0');
 
-    messages[3].innerHTML = '<div class="avatar"><img src="img/equipos/belgrano.png" alt="" style="width: 40px;height: 40px;"></div><div class="message-content"><strong>Bautista</strong><p>' + mensaje + '</p></div><span class="time">'+horas+':'+minutos+':'+segundos+'</span>';
+    messages[3].innerHTML =
+    `<div class="avatar">
+        <img src="${usuarioLogo}" alt="logo" style="width:40px;height:40px;">
+    </div>
+    <div class="message-content">
+        <strong>${usuarioNombre}</strong><p>${mensaje}</p>
+    </div>
+    <span class="time">${horas}:${minutos}:${segundos}</span>`;
     messages[3].className = 'message own-message';
+
     document.getElementById("msgForo").value = ''; 
     guardarMSGS();
     //que tarde un segundo en llamar a nuevoMSG

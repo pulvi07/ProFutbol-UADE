@@ -137,5 +137,61 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <div id="cart">
+    <h4>Carrito (<span id="cart-count">0</span>)</h4>
+    <ul id="cart-items"></ul>
+    <div class="cart-footer">
+        <button style="display: none;" id="checkout-btn">Comprar</button>
+    </div>
+    </div>
 </body>
+<script>
+  const cart = [];
+
+  // Refresca contador y lista
+  function updateCart() {
+    document.getElementById('cart-count').textContent = cart.length;
+    const ul = document.getElementById('cart-items');
+    ul.innerHTML = '';
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item.name;
+      const span = document.createElement('span');
+      span.textContent = `${item.size} – ${item.price}`;
+      li.appendChild(span);
+      ul.appendChild(li);
+    });
+  }
+
+  // Botones “Añadir al carrito”
+  document.querySelectorAll('.product button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById("checkout-btn").style.display="block"
+      const card  = btn.closest('.product');
+      const name  = card.querySelector('.nombreprod').textContent;
+      const price = card.querySelector('.precio').textContent;
+      const size  = card.querySelector('select').value;
+      cart.push({ name, price, size });
+      updateCart();
+    });
+  });
+
+  // Botón “Comprar”
+  document.getElementById('checkout-btn')
+    .addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('El carrito está vacío');
+        return;
+      }
+      let resumen = 'Vas a comprar:\n\n';
+      cart.forEach((i, idx) => {
+        resumen += `${idx+1}. ${i.name} (${i.size}) - ${i.price}\n`;
+      });
+      alert(resumen);
+      // Limpia el carrito 
+      document.getElementById("checkout-btn").style.display="none"
+      cart.length = 0;
+      updateCart();
+    });
+</script>
 </html>
